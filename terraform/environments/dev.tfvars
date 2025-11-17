@@ -2,8 +2,10 @@ project_id = "eastern-augury-477909-q6"
 
 trigger_name = "alb-trigger-dev"
 
-repo_name   = "zerotohero200222/ALB-service-terraform-cloudbuild-trigger"
-branch_name = "main"   # FIXED: no regex
+github_owner = "zerotohero200222"
+github_repo  = "ALB-service-terraform-cloudbuild-trigger"
+
+branch_regex = "^main$"
 
 environment = "dev"
 
