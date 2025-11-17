@@ -1,24 +1,23 @@
-###############################################
-# Cloud Build PR Trigger
-###############################################
-
-resource "google_cloudbuild_trigger" "pr_trigger" {
-  name        = var.pr_trigger_name
-  description = "PR-triggered Cloud Build that deploys load balancer components"
+resource "google_cloudbuild_trigger" "github_push_trigger" {
+  project     = var.project_id
+  location    = "us-central1"
+  name        = var.trigger_name
+  description = "Cloud Build GitHub App trigger for main branch"
 
   github {
-    owner = split("/", var.repository_name)[0]
-    name  = split("/", var.repository_name)[1]
+    owner = var.github_owner
+    name  = var.github_repo
 
-    pull_request {
-      branch           = var.base_branch_regex
-      comment_control  = "COMMENTS_ENABLED"
+    push {
+      branch = var.branch_regex
     }
   }
 
-  # Cloud Build file location
   filename = var.cloudbuild_yaml_path
 
-  # Cloud Build SA
+  substitutions = {
+    "_ENV" = var.environment
+  }
+
   service_account = var.trigger_service_account
 }
