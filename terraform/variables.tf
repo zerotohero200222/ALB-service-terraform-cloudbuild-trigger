@@ -1,17 +1,21 @@
-variable "project_id" { type = string }
-
-variable "region" {
-  type    = string
-  default = "us-central1"
+variable "project_id" {
+  type = string
 }
 
-variable "trigger_name" { type = string }
+variable "trigger_name" {
+  type = string
+}
 
-variable "repo_name" { type = string }
+variable "github_owner" {
+  type = string
+}
 
-variable "branch_name" {
-  type    = string
-  default = "main"
+variable "github_repo" {
+  type = string
+}
+
+variable "branch_regex" {
+  type = string
 }
 
 variable "cloudbuild_yaml_path" {
@@ -19,8 +23,12 @@ variable "cloudbuild_yaml_path" {
   default = "cloudbuild.yaml"
 }
 
-variable "environment" { type = string }
+variable "environment" {
+  type = string
+}
 
-variable "trigger_service_account" { type = string }
+variable "trigger_service_account" {
+  type = string
+}
 
 
