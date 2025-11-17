@@ -1,5 +1,5 @@
 output "pr_trigger_id" {
-  value = google_cloudbuild_trigger.pr_trigger.trigger_id
+  value = google_cloudbuild_trigger.pr_trigger.id
 }
 
 output "pr_trigger_name" {
