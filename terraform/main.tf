@@ -4,9 +4,12 @@ resource "google_cloudbuild_trigger" "pr_trigger" {
   description = "Cloud Build Repo trigger (Terraform managed)"
   location    = "us-central1"
 
-  trigger_template {
-    repo_name   = var.repo_name
-    branch_name = "main"
+  source_to_build {
+    repo_source {
+      project_id  = var.project_id
+      repo_name   = var.repo_name
+      branch_name = "main"
+    }
   }
 
   filename = var.cloudbuild_yaml_path
