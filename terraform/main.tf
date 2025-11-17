@@ -5,8 +5,8 @@ resource "google_cloudbuild_trigger" "pr_trigger" {
   location    = "us-central1"
 
   trigger_template {
-    repo_name     = var.repo_name
-    branch_regex  = var.branch_regex
+    repo_name   = var.repo_name
+    branch_name = var.branch_name   # FIXED – no regex allowed
   }
 
   filename = var.cloudbuild_yaml_path
