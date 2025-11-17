@@ -1,14 +1,9 @@
-variable "project_id" {
-  type = string
-}
-
-variable "trigger_name" {
-  type = string
-}
+variable "project_id" { type = string }
+variable "trigger_name" { type = string }
 
 variable "repo_name" {
-  description = "Full Cloud Build repository identifier"
   type        = string
+  description = "Cloud Build 2nd-gen repository name"
 }
 
 variable "cloudbuild_yaml_path" {
@@ -16,11 +11,8 @@ variable "cloudbuild_yaml_path" {
   default = "cloudbuild.yaml"
 }
 
-variable "environment" {
-  type = string
-}
+variable "environment" { type = string }
 
-variable "trigger_service_account" {
-  type = string
-}
+variable "trigger_service_account" { type = string }
+
 
