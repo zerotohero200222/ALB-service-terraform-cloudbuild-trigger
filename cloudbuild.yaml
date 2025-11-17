@@ -1,36 +1,30 @@
 steps:
-  # ---------------------------
-  # Terraform Init
-  # ---------------------------
+  # Step 1: Terraform Init (in terraform/ folder)
   - name: hashicorp/terraform:1.5.0
     id: Terraform Init
     args:
-      - "-chdir=terraform"
+      - -chdir=terraform
       - init
 
-  # ---------------------------
-  # Terraform Plan
-  # ---------------------------
+  # Step 2: Terraform Plan
   - name: hashicorp/terraform:1.5.0
     id: Terraform Plan
     args:
-      - "-chdir=terraform"
+      - -chdir=terraform
       - plan
-      - "-var-file=environments/${_ENV}.tfvars"
+      - -var-file=environments/${_ENV}.tfvars
 
-  # ---------------------------
-  # Terraform Apply
-  # ---------------------------
+  # Step 3: Terraform Apply
   - name: hashicorp/terraform:1.5.0
     id: Terraform Apply
     args:
-      - "-chdir=terraform"
+      - -chdir=terraform
       - apply
-      - "-auto-approve"
-      - "-var-file=environments/${_ENV}.tfvars"
+      - -auto-approve
+      - -var-file=environments/${_ENV}.tfvars
 
 substitutions:
-  _ENV: "dev"   # Default environment (can be overridden per trigger)
+  _ENV: dev   # default; overridden in trigger if needed
 
 options:
   logging: CLOUD_LOGGING_ONLY
