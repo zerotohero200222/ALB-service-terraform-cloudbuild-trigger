@@ -1,9 +1,10 @@
-project_id = "prod-prj-frontend-apps"
-region     = "us-central1"
+project_id = "eastern-augury-477909-q6"
 
-pr_trigger_name = "deploy-trigger-via-pr-prod"
+trigger_name = "ALB-buildtrigger-prod"
 
-repository_name     = "zerotohero200222/ALB-service-terraform-cloudbuild"
-base_branch_regex   = "^main$"
+repo_name    = "zerotohero200222/ALB-service-terraform-cloudbuild-trigger"
+branch_regex = "^main$"
 
-trigger_service_account = "cloudbuild-sa@prod-prj-frontend-apps.iam.gserviceaccount.com"
+environment = "prod"
+
+trigger_service_account = "service-account@prod-prj-frontend-apps.iam.gserviceaccount.com"
