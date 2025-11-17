@@ -1,14 +1,15 @@
 resource "google_cloudbuild_trigger" "pr_trigger" {
   project     = var.project_id
   name        = var.trigger_name
-  description = "Cloud Build Repo trigger (Terraform managed)"
-  location    = "us-central1"
+  description = "Cloud Build GitHub App trigger managed by Terraform"
+  location    = "global"
 
-  source_to_build {
-    repo_source {
-      project_id  = var.project_id
-      repo_name   = var.repo_name
-      branch_name = "main"
+  github {
+    owner = var.github_owner
+    name  = var.github_repo
+
+    push {
+      branch = var.branch_regex
     }
   }
 
