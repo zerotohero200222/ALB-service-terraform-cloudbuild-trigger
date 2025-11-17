@@ -1,30 +1,36 @@
 variable "project_id" {
-  description = "GCP project ID"
   type        = string
+  description = "GCP Project ID"
 }
 
 variable "region" {
-  description = "GCP region for the trigger"
   type        = string
+  description = "GCP region"
   default     = "us-central1"
 }
 
 variable "pr_trigger_name" {
-  description = "Name of the PR Cloud Build trigger"
   type        = string
+  description = "Name of the PR Cloud Build trigger"
 }
 
 variable "repository_name" {
-  description = "Cloud Build repository connected to GitHub"
   type        = string
+  description = "Github repo in <owner>/<repo> format"
 }
 
 variable "base_branch_regex" {
-  description = "Branch regex that PR must target"
   type        = string
+  description = "Regex for PR base branch"
 }
 
 variable "trigger_service_account" {
-  description = "Service account that executes Cloud Build"
   type        = string
+  description = "Service account used by Cloud Build"
+}
+
+variable "cloudbuild_yaml_path" {
+  type        = string
+  description = "Cloud Build file path"
+  default     = "cloudbuild.yaml"
 }
