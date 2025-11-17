@@ -1,28 +1,41 @@
 variable "project_id" {
-  type = string
+  description = "GCP project where the Cloud Build trigger lives"
+  type        = string
 }
 
 variable "trigger_name" {
-  type = string
+  description = "Name of the Cloud Build trigger"
+  type        = string
 }
 
-variable "repo_name" {
-  type = string
+variable "github_owner" {
+  description = "GitHub organization or user name"
+  type        = string
 }
 
-variable "branch_name" {
-  type = string
+variable "github_repo" {
+  description = "GitHub repository name (without owner)"
+  type        = string
+}
+
+variable "branch_regex" {
+  description = "Regex for branch that triggers the build (e.g. ^main$)"
+  type        = string
+  default     = "^main$"
 }
 
 variable "cloudbuild_yaml_path" {
-  type    = string
-  default = "cloudbuild.yaml"
+  description = "Path to cloudbuild config in the repo"
+  type        = string
+  default     = "cloudbuild.yaml"
 }
 
 variable "environment" {
-  type = string
+  description = "Environment label (dev/uat/prod)"
+  type        = string
 }
 
 variable "trigger_service_account" {
-  type = string
+  description = "Service account email used to execute the build"
+  type        = string
 }
