@@ -1,9 +1,22 @@
-variable "project_id" { type = string }
-variable "trigger_name" { type = string }
+variable "project_id" {
+  type = string
+}
 
-variable "repo_name" {
-  type        = string
-  description = "Cloud Build 2nd-gen repository name"
+variable "trigger_name" {
+  type = string
+}
+
+variable "github_owner" {
+  type = string
+}
+
+variable "github_repo" {
+  type = string
+}
+
+variable "branch_regex" {
+  type    = string
+  default = "^main$"
 }
 
 variable "cloudbuild_yaml_path" {
@@ -11,8 +24,12 @@ variable "cloudbuild_yaml_path" {
   default = "cloudbuild.yaml"
 }
 
-variable "environment" { type = string }
+variable "environment" {
+  type = string
+}
 
-variable "trigger_service_account" { type = string }
+variable "trigger_service_account" {
+  type = string
+}
 
 
