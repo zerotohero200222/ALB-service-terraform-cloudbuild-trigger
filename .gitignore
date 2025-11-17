@@ -1,0 +1,15 @@
+# Terraform local state
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars.backup
+
+# Crash logs
+crash.log
+crash.*.log
+
+# Terraform plan outputs
+*.tfplan
+
+# Cloud Build logs
+cloudbuild-*
