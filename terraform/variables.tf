@@ -1,21 +1,13 @@
-variable "project_id" {
-  type = string
-}
+variable "project_id" { type = string }
 
 variable "region" {
   type    = string
   default = "us-central1"
 }
 
-variable "trigger_name" {
-  type = string
-}
+variable "trigger_name" { type = string }
 
-# Full repo path:
-# projects/<project>/locations/us-central1/connections/github/repositories/<repo>
-variable "repo_name" {
-  type = string
-}
+variable "repo_name" { type = string }
 
 variable "branch_name" {
   type    = string
@@ -27,12 +19,8 @@ variable "cloudbuild_yaml_path" {
   default = "cloudbuild.yaml"
 }
 
-variable "environment" {
-  type = string
-}
+variable "environment" { type = string }
 
-variable "trigger_service_account" {
-  type = string
-}
+variable "trigger_service_account" { type = string }
 
 
