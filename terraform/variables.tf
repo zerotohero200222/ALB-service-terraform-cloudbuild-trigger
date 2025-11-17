@@ -10,7 +10,7 @@ variable "repo_name" {
   type = string
 }
 
-variable "branch_regex" {
+variable "branch_name" {
   type = string
 }
 
