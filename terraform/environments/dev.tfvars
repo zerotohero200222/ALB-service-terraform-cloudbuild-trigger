@@ -7,4 +7,3 @@ repo_name = "projects/eastern-augury-477909-q6/locations/us-central1/connections
 environment = "dev"
 
 trigger_service_account = "162720148859-compute@developer.gserviceaccount.com"
-
