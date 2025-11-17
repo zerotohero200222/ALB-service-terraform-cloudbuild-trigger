@@ -1,9 +1,10 @@
-project_id = "uat-prj-frontend-apps"
-region     = "us-central1"
+project_id = "eastern-augury-477909-q6"
 
-pr_trigger_name = "deploy-trigger-via-pr-uat"
+trigger_name = "ALB-buildtrigger-uat"
 
-repository_name     = "zerotohero200222/ALB-service-terraform-cloudbuild"
-base_branch_regex   = "^main$"
+repo_name    = "zerotohero200222/ALB-service-terraform-cloudbuild-trigger"
+branch_regex = "^main$"
 
-trigger_service_account = "cloudbuild-sa@uat-prj-frontend-apps.iam.gserviceaccount.com"
+environment = "uat"
+
+trigger_service_account = "service-account@uat-prj-frontend-apps.iam.gserviceaccount.com"
