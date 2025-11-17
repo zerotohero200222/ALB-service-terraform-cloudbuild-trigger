@@ -6,11 +6,7 @@ variable "trigger_name" {
   type = string
 }
 
-variable "github_owner" {
-  type = string
-}
-
-variable "github_repo" {
+variable "repo_name" {
   type = string
 }
 
