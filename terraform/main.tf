@@ -4,12 +4,13 @@ resource "google_cloudbuild_trigger" "pr_trigger" {
   description = "Cloud Build GitHub App trigger managed by Terraform"
   location    = "global"
 
-  github {
+  github_app {
     owner = var.github_owner
     name  = var.github_repo
 
-    push {
-      branch = var.branch_regex
+    pull_request {
+      branch          = var.branch_regex
+      comment_control = "COMMENTS_ENABLED"
     }
   }
 
