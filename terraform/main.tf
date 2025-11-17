@@ -1,16 +1,12 @@
 resource "google_cloudbuild_trigger" "pr_trigger" {
   project     = var.project_id
   name        = var.trigger_name
-  description = "Cloud Build GitHub App trigger"
+  description = "Cloud Build Repo trigger"
   location    = "us-central1"
 
-  github {
-    owner = var.github_owner
-    name  = var.github_repo
-
-    push {
-      branch = var.branch_regex
-    }
+  trigger_template {
+    repo_name     = var.repo_name
+    branch_regex  = var.branch_regex
   }
 
   filename = var.cloudbuild_yaml_path
